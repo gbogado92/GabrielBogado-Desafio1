@@ -33,12 +33,3 @@ ul li form {
 	justify-content: space-between;
 }
 
-span.labelStyle {
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
-    /* background-color: green; */
-    border: 2px solid #28a745;
-    border-radius: 50%;
-    display: inline-block;
-  }
