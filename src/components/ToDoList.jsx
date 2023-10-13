@@ -5,14 +5,12 @@ import ToDoItem from "./ToDoItem";
 const ToDoList = ({ todos, handleDeleteToDo, handleCompleteToDo }) => {
   return (
     <ul className="list-group mx-auto">
-      {" "}
-      {/* Agrega la clase "list-group" para centrar el contenido */}
       {todos.map((todo) => (
         <ToDoItem
-          key={todo.id}
-          todo={todo}
-          handleDeleteToDo={handleDeleteToDo}
-          handleCompleteToDo={handleCompleteToDo}
+          key={todo.id} // Clave única para cada elemento de la lista
+          todo={todo} // Objeto que representa la tarea
+          handleDeleteToDo={handleDeleteToDo} // Función para eliminar la tarea
+          handleCompleteToDo={handleCompleteToDo} // Función para marcar la tarea como completada
         />
       ))}
     </ul>

@@ -6,6 +6,7 @@ export const todoreducer = (initialState, action) => {
 
     case "Add ToDo":
       // Si la acción es de tipo "Add ToDo," se agrega una nueva tarea al estado.
+      // Se copia el estado actual y se agrega la nueva tarea al final del array.
       return [...initialState, action.payload];
 
     case "Delete ToDo":
@@ -22,6 +23,7 @@ export const todoreducer = (initialState, action) => {
       );
 
     default:
+      // Si la acción no coincide con ninguna de las anteriores, se devuelve el estado actual sin cambios.
       return initialState;
   }
 };

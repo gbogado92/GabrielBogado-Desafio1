@@ -7,8 +7,8 @@ const ToDoUpdate = ({ todo, handleUpdateToDo }) => {
     updateDescription: todo.description,
   });
 
-  const [disabled, setDisabled] = useState(true);
-  const focusInpuntRef = useRef();
+  const [disabled, setDisabled] = useState(true); // Estado para habilitar o deshabilitar la edición
+  const focusInputRef = useRef(); // Referencia para enfocar el campo de entrada
 
   const onSubmitUpdate = (e) => {
     e.preventDefault();
@@ -16,11 +16,14 @@ const ToDoUpdate = ({ todo, handleUpdateToDo }) => {
     const id = todo.id;
     const description = updateDescription;
 
+    // Llama a la función para actualizar la tarea
     handleUpdateToDo(id, description);
 
+    // Cambia el estado para deshabilitar la edición
     setDisabled(!disabled);
 
-    focusInpuntRef.current.focus();
+    // Enfoca el campo de entrada después de la actualización
+    focusInputRef.current.focus();
   };
 
   return (
@@ -36,7 +39,7 @@ const ToDoUpdate = ({ todo, handleUpdateToDo }) => {
         onChange={onInputChange}
         placeholder="Ingresa una nueva tarea"
         readOnly={disabled}
-        ref={focusInpuntRef}
+        ref={focusInputRef}
       />
     </form>
   );
