@@ -17,32 +17,11 @@ export const todoreducer = (initialState, action) => {
       // Si la acción es de tipo "Complete ToDo," se marca una tarea como completada o no completada.
       // Se utiliza el método "map" para crear un nuevo array de tareas.
       // Si el ID de la tarea coincide con el de la acción, se invierte el valor de "done."
-      return initialState.map((todo) => {
-        if (todo.id === action.payload) {
-          return {
-            ...todo,
-            done: !todo.done,
-          };
-        }
-        return todo;
-      });
-
-    case "Update ToDo":
-      // Si la acción es de tipo "Update ToDo," se actualiza la descripción de una tarea.
-      // Se utiliza el método "map" para crear un nuevo array de tareas.
-      // Si el ID de la tarea coincide con el de la acción, se actualiza la descripción.
-      return initialState.map((todo) => {
-        if (todo.id === action.payload.id) {
-          return {
-            ...todo,
-            description: action.payload.description,
-          };
-        }
-        return todo;
-      });
+      return initialState.map((todo) =>
+        todo.id === action.payload ? { ...todo, done: !todo.done } : todo
+      );
 
     default:
-      // Si la acción no coincide con ninguno de los casos anteriores, se devuelve el estado actual sin cambios.
       return initialState;
   }
 };

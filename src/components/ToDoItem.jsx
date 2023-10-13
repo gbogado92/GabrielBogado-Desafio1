@@ -6,12 +6,17 @@ import ToDoUpdate from "./ToDoUpdate";
 const ToDoItem = () => {
   return (
     <li>
-      <span>
-        <label htmlFor=""></label>
+      <span className="labelStyle">
+        <label className="d-inline-block rounded-circle"></label>
       </span>
       <ToDoUpdate /> {/* Componente para actualizar la tarea */}
-      <button>
-        <FaTrashAlt />
+      <button
+        className="btn btn-outline-danger rounded-circle"
+        style={{ width: "40px", height: "40px" }}
+      >
+        <span className="d-flex align-items-center justify-content-center">
+          <FaTrashAlt />
+        </span>
       </button>
     </li>
   );

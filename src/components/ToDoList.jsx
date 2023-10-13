@@ -4,11 +4,9 @@ import ToDoItem from "./ToDoItem";
 // Componente que muestra la lista de tareas
 const ToDoList = () => {
   return (
-    <div>
-      <ul>
-        <ToDoItem />
-      </ul>
-    </div>
+    <ul className="list-group mx-auto">
+      <ToDoItem />
+    </ul>
   );
 };
 

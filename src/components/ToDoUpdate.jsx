@@ -1,17 +1,15 @@
 import React from "react";
-import { AiFillEdit } from "react-icons/ai";
 
 // Componente que permite actualizar una tarea
 const ToDoUpdate = () => {
   return (
-    <form>
+    <form className="d-flex gap-2">
       {/* Campo de entrada para editar la descripción de la tarea */}
-      <input type="text" name="description" />
-
-      {/* Botón para editar/guardar la edición */}
-      <button type="button">
-        <AiFillEdit />
-      </button>
+      <input
+        className="form-control border-0 font-weight-bold font-family-inherit font-size-18 text-dark w-100 shadow-none"
+        type="text"
+        name="description"
+      />
     </form>
   );
 };
